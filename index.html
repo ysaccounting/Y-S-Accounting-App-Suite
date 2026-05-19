@@ -21,7 +21,7 @@
  
     .container {
       width: 100%;
-      max-width: 580px;
+      max-width: 1200px;
     }
  
     header {
@@ -37,10 +37,10 @@
       text-align: center;
     }
  
-    .subtitle {
-      font-size: 15px;
-      color: #888;
-      font-style: italic;
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
     }
  
     .list {
@@ -69,25 +69,27 @@
     }
  
     .item i {
-      font-size: 36px;
+      font-size: 32px;
       flex-shrink: 0;
     }
  
+    .text {
+      flex: 1;
+      min-width: 0;
+    }
+ 
     .name {
-      font-size: 15px;
+      font-size: 14px;
       font-weight: bold;
-      width: 150px;
-      min-width: 150px;
-      white-space: normal;
       line-height: 1.3;
       font-family: -apple-system, 'Helvetica Neue', sans-serif;
       text-align: center;
+      margin-bottom: 4px;
     }
  
     .desc {
-      font-size: 14px;
+      font-size: 12px;
       color: #888;
-      flex: 1;
       line-height: 1.4;
       font-family: -apple-system, 'Helvetica Neue', sans-serif;
       text-align: center;
@@ -99,14 +101,8 @@
       flex-shrink: 0;
     }
  
-    footer {
-      margin-top: 32px;
-      font-size: 13px;
-      color: #bbb;
-      font-style: italic;
-    }
- 
-    @media (max-width: 480px) {
+    @media (max-width: 700px) {
+      .grid { grid-template-columns: 1fr; }
       .desc { display: none; }
       h1 { font-size: 22px; }
     }
@@ -118,101 +114,136 @@
       <h1>Y&S Accounting App Suite</h1>
     </header>
  
-    <div class="list">
+    <div class="grid">
  
-      <a class="item" href="https://applied-payments-production.up.railway.app/" target="_blank">
-        <i class="ti ti-credit-card" style="color: #185FA5;" aria-hidden="true"></i>
-        <span class="name">Applied Payments from TicketVault</span>
-        <span class="desc">Transform an Applied Payments report from TicketVault into the entries needed for QBO and tabs needed for sales ledgers</span>
-        <span class="arrow">→</span>
-      </a>
+      <!-- Column 1 -->
+      <div class="list">
  
-      <a class="item" href="https://ar-aging-builder-production.up.railway.app/" target="_blank">
-        <i class="ti ti-clock" style="color: #0F6E56;" aria-hidden="true"></i>
-        <span class="name">AR Aging Report</span>
-        <span class="desc">Transform an unpaid invoices list from TicketVault into an AR Aging report</span>
-        <span class="arrow">→</span>
-      </a>
+        <a class="item" href="https://applied-payments-production.up.railway.app/" target="_blank">
+          <i class="ti ti-credit-card" style="color: #185FA5;" aria-hidden="true"></i>
+          <span class="text">
+            <span class="name">Applied Payments from TicketVault</span>
+            <span class="desc">Transform an Applied Payments report from TicketVault into the entries needed for QBO and tabs needed for sales ledgers</span>
+          </span>
+          <span class="arrow">→</span>
+        </a>
  
-      <a class="item" href="https://bank-feed-uploads-production.up.railway.app/" target="_blank">
-        <i class="ti ti-building-bank" style="color: #534AB7;" aria-hidden="true"></i>
-        <span class="name">Bank Feed Uploads</span>
-        <span class="desc">Transform any card platform's transaction download into a ready-to-upload CSV file for QBO bank feed</span>
-        <span class="arrow">→</span>
-      </a>
+        <a class="item" href="https://ar-aging-builder-production.up.railway.app/" target="_blank">
+          <i class="ti ti-clock" style="color: #0F6E56;" aria-hidden="true"></i>
+          <span class="text">
+            <span class="name">AR Aging Report</span>
+            <span class="desc">Transform an unpaid invoices list from TicketVault into an AR Aging report</span>
+          </span>
+          <span class="arrow">→</span>
+        </a>
  
-      <a class="item" href="https://daycare-cert-list-parse-production.up.railway.app/" target="_blank">
-        <i class="ti ti-file-certificate" style="color: #FFD700;" aria-hidden="true"></i>
-        <span class="name">Daycare Cert List Parsing</span>
-        <span class="desc">Convert monthly DHS Cert Lists from PDF/JPG to Excel</span>
-        <span class="arrow">→</span>
-      </a>
+        <a class="item" href="https://bank-feed-uploads-production.up.railway.app/" target="_blank">
+          <i class="ti ti-building-bank" style="color: #534AB7;" aria-hidden="true"></i>
+          <span class="text">
+            <span class="name">Bank Feed Uploads</span>
+            <span class="desc">Transform any card platform's transaction download into a ready-to-upload CSV file for QBO bank feed</span>
+          </span>
+          <span class="arrow">→</span>
+        </a>
  
-      <a class="item" href="https://import-payments-production.up.railway.app/" target="_blank">
-        <i class="ti ti-file-import" style="color: #854F0B;" aria-hidden="true"></i>
-        <span class="name">Import Payments to TicketVault</span>
-        <span class="desc">Transform any network's remittance file into a ready-to-upload CSV file into TicketVault</span>
-        <span class="arrow">→</span>
-      </a>
+        <a class="item" href="https://daycare-cert-list-parse-production.up.railway.app/" target="_blank">
+          <i class="ti ti-file-certificate" style="color: #FFD700;" aria-hidden="true"></i>
+          <span class="text">
+            <span class="name">Daycare Cert List Parsing</span>
+            <span class="desc">Convert monthly DHS Cert Lists from PDF/JPG to Excel</span>
+          </span>
+          <span class="arrow">→</span>
+        </a>
  
-      <a class="item" href="https://installment-payment-projections-production.up.railway.app/" target="_blank">
-        <i class="ti ti-calendar-stats" style="color: #3B6D11;" aria-hidden="true"></i>
-        <span class="name">Installment Projections</span>
-        <span class="desc">Project upcoming STH charges by team and credit card / bank account based on the prior month's ticket credit QBO general ledger</span>
-        <span class="arrow">→</span>
-      </a>
-
-      <a class="item" href="https://inventory-month-end-file-prep-production.up.railway.app/" target="_blank">
-        <i class="ti ti-package" style="color: #92400E;" aria-hidden="true"></i>
-        <span class="name">Inventory Month-End File Prep</span>
-        <span class="desc">Transform TicketVault inventory report export into files ready for month-end reporting</span>
-        <span class="arrow">→</span>
-      </a>
-
-      <a class="item" href="https://inventory-reconciliation-tool-production.up.railway.app/" target="_blank">
-        <i class="ti ti-tool" style="color: #6B7280;" aria-hidden="true"></i>
-        <span class="name">Inventory Reconciliation Tool</span>
-        <span class="desc">Reconcile monthly inventory ledgers from QBO against TicketVault purchase details reports to identify disrepancies</span>
-        <span class="arrow">→</span>
-      </a>
-
-      <a class="item" href="https://invoices-month-end-file-prep-production.up.railway.app/" target="_blank">
-        <i class="ti ti-file-invoice" style="color: #E53935;" aria-hidden="true"></i>
-        <span class="name">Invoices Month-End File Prep</span>
-        <span class="desc">Transform TicketVault invoices report export into files ready for month-end reporting</span>
-        <span class="arrow">→</span>
-      </a>
-
-      <a class="item" href="https://consolidated-p-l-mom-comp-production.up.railway.app/" target="_blank">
-        <i class="ti ti-trending-up" style="color: #22C55E;" aria-hidden="true"></i>
-        <span class="name">P&L MOM Comparison</span>
-        <span class="desc">Transform QBO consolidated monthly P&Ls into month-over-month comparisons for each company in the consolidated group</span>
-        <span class="arrow">→</span>
-      </a>
+        <a class="item" href="https://import-payments-production.up.railway.app/" target="_blank">
+          <i class="ti ti-file-import" style="color: #854F0B;" aria-hidden="true"></i>
+          <span class="text">
+            <span class="name">Import Payments to TicketVault</span>
+            <span class="desc">Transform any network's remittance file into a ready-to-upload CSV file into TicketVault</span>
+          </span>
+          <span class="arrow">→</span>
+        </a>
  
-      <a class="item" href="https://purchase-details-uploads-production.up.railway.app/" target="_blank">
-        <i class="ti ti-cash-register" style="color: #F97316;" aria-hidden="true"></i>
-        <span class="name">Purchase Details</span>
-        <span class="desc">Transform a purchase details report from TicketVault into a ready-to-upload Excel file into QBO through the Y&S financials dashboard</span>
-        <span class="arrow">→</span>
-      </a>
+        <a class="item" href="https://installment-payment-projections-production.up.railway.app/" target="_blank">
+          <i class="ti ti-calendar-stats" style="color: #3B6D11;" aria-hidden="true"></i>
+          <span class="text">
+            <span class="name">Installment Projections</span>
+            <span class="desc">Project upcoming STH charges by team and credit card / bank account based on the prior month's ticket credit QBO general ledger</span>
+          </span>
+          <span class="arrow">→</span>
+        </a>
  
-      <a class="item" href="https://stubhub-channel-share-production.up.railway.app/" target="_blank">
-        <i class="ti ti-share" style="color: #993556;" aria-hidden="true"></i>
-        <span class="name">StubHub Channel Share Report</span>
-        <span class="desc">Transform an invoice details report from TicketVault into the StubHub Channel Share report</span>
-        <span class="arrow">→</span>
-      </a>
+      </div>
  
-      <a class="item" href="https://weekly-cash-inflow-projections-production.up.railway.app/" target="_blank">
-        <i class="ti ti-moneybag" style="color: #2E7D32;" aria-hidden="true"></i>
-        <span class="name">Weekly Cash Inflow Projections</span>
-        <span class="desc">Upload sales data from TicketVault and StubHub portal to project cash inflow for the coming week</span>
-        <span class="arrow">→</span>
-      </a>
+      <!-- Column 2 -->
+      <div class="list">
+ 
+        <a class="item" href="https://inventory-month-end-file-prep-production.up.railway.app/" target="_blank">
+          <i class="ti ti-package" style="color: #92400E;" aria-hidden="true"></i>
+          <span class="text">
+            <span class="name">Inventory Month-End File Prep</span>
+            <span class="desc">Transform TicketVault inventory report export into files ready for month-end reporting</span>
+          </span>
+          <span class="arrow">→</span>
+        </a>
+ 
+        <a class="item" href="https://inventory-reconciliation-tool-production.up.railway.app/" target="_blank">
+          <i class="ti ti-tool" style="color: #6B7280;" aria-hidden="true"></i>
+          <span class="text">
+            <span class="name">Inventory Reconciliation Tool</span>
+            <span class="desc">Reconcile monthly inventory ledgers from QBO against TicketVault purchase details reports to identify discrepancies</span>
+          </span>
+          <span class="arrow">→</span>
+        </a>
+ 
+        <a class="item" href="https://invoices-month-end-file-prep-production.up.railway.app/" target="_blank">
+          <i class="ti ti-file-invoice" style="color: #E53935;" aria-hidden="true"></i>
+          <span class="text">
+            <span class="name">Invoices Month-End File Prep</span>
+            <span class="desc">Transform TicketVault invoices report export into files ready for month-end reporting</span>
+          </span>
+          <span class="arrow">→</span>
+        </a>
+ 
+        <a class="item" href="https://consolidated-p-l-mom-comp-production.up.railway.app/" target="_blank">
+          <i class="ti ti-trending-up" style="color: #22C55E;" aria-hidden="true"></i>
+          <span class="text">
+            <span class="name">P&L MOM Comparison</span>
+            <span class="desc">Transform QBO consolidated monthly P&Ls into month-over-month comparisons for each company in the consolidated group</span>
+          </span>
+          <span class="arrow">→</span>
+        </a>
+ 
+        <a class="item" href="https://purchase-details-uploads-production.up.railway.app/" target="_blank">
+          <i class="ti ti-cash-register" style="color: #F97316;" aria-hidden="true"></i>
+          <span class="text">
+            <span class="name">Purchase Details</span>
+            <span class="desc">Transform a purchase details report from TicketVault into a ready-to-upload Excel file into QBO through the Y&S financials dashboard</span>
+          </span>
+          <span class="arrow">→</span>
+        </a>
+ 
+        <a class="item" href="https://stubhub-channel-share-production.up.railway.app/" target="_blank">
+          <i class="ti ti-share" style="color: #993556;" aria-hidden="true"></i>
+          <span class="text">
+            <span class="name">StubHub Channel Share Report</span>
+            <span class="desc">Transform an invoice details report from TicketVault into the StubHub Channel Share report</span>
+          </span>
+          <span class="arrow">→</span>
+        </a>
+ 
+        <a class="item" href="https://weekly-cash-inflow-projections-production.up.railway.app/" target="_blank">
+          <i class="ti ti-moneybag" style="color: #2E7D32;" aria-hidden="true"></i>
+          <span class="text">
+            <span class="name">Weekly Cash Inflow Projections</span>
+            <span class="desc">Upload sales data from TicketVault and StubHub portal to project cash inflow for the coming week</span>
+          </span>
+          <span class="arrow">→</span>
+        </a>
+ 
+      </div>
  
     </div>
- 
   </div>
 </body>
 </html>
